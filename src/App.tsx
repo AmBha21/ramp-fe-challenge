@@ -22,7 +22,6 @@ export function App() {
   const loadAllTransactions = useCallback(async () => {
     setIsLoading(true)
     { /* BUG 7: Deleted the invalidate data */}
-    // transactionsByEmployeeUtils.invalidateData()
     await employeeUtils.fetchAll()
     setIsLoading(false)
     await paginatedTransactionsUtils.fetchAll()
